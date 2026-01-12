@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin Login</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</head>
+<body>
+    <!-- 🌐 MAIN NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark shadow"
+     style="background: linear-gradient(90deg, #b71c1c, #7f0000);">
+  <div class="container">
+
+    <!-- Logo / Brand -->
+    <a class="navbar-brand fw-bold" href="index.html">
+      🩸 Blood Donation System
+    </a>
+
+    <!-- Mobile Toggle -->
+    <button class="navbar-toggler" type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#mainNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Navbar Links -->
+    <div class="collapse navbar-collapse" id="mainNavbar">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-lg-2">
+        
+        <!-- Home -->
+        <li class="nav-item">
+          <a class="nav-link active" href="index.html">Home</a>
+        </li>
+
+        <!-- Donor Dropdown -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#"
+             role="button" data-bs-toggle="dropdown">
+            Donor
+          </a>
+          <ul class="dropdown-menu">
+            <li>
+              <a class="dropdown-item" href="donor-register.html">
+                Register as Donor
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="donor-login.html">
+                Donor Login
+              </a>
+            </li>
+          </ul>
+        </li>
+
+        <!-- Blood Request -->
+        <li class="nav-item">
+          <a class="nav-link" href="request-blood.html">
+            Request Blood
+          </a>
+        </li>
+
+
+        <!-- Request Status -->
+        <li class="nav-item">
+          <a class="nav-link" href="request-status.html">
+            Request Status
+          </a>
+        </li>
+        <li class="nav-item">
+  <a class="nav-link" href="request-history.html">
+    Request History
+  </a>
+</li>
+
+
+        <!-- Admin -->
+        <li class="nav-item">
+          <a class="btn btn-light btn-sm text-danger fw-bold ms-lg-2"
+             href="admin-login.html">
+            Admin
+          </a>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+
+<div class="container mt-5 col-md-4">
+  <div class="card p-4 shadow">
+    <form action="/admin/login" method="POST">
+      <input class="form-control mb-3" name="username" placeholder="Username" required>
+      <input class="form-control mb-3" type="password" name="password" placeholder="Password" required>
+      <button class="btn btn-red w-100">Login</button>
+    </form>
+  </div>
+</div>
+
+</body>
+</html>

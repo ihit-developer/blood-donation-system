@@ -1,0 +1,164 @@
+:root {
+  --blood-red: #b71c1c;
+  --dark-red: #7f0000;
+}
+
+body {
+  background-color: #f8f9fa;
+}
+
+/* Navbar */
+.navbar {
+  background-color: var(--blood-red);
+}
+.navbar .btn {
+  border-radius: 20px;
+  padding: 6px 16px;
+}
+
+.navbar-brand, .nav-link {
+  color: #fff !important;
+  font-weight: 600;
+}
+
+
+/* Hero */
+.hero {
+  background: linear-gradient(rgba(183,28,28,0.85), rgba(183,28,28,0.85)),
+              url("https://images.unsplash.com/photo-1588776814546-1ffcf47267a5");
+  background-size: cover;
+  color: white;
+  padding: 90px 20px;
+  text-align: center;
+}
+.navbar .nav-link {
+  font-weight: 500;
+}
+
+.navbar .nav-link:hover {
+  color: #ffdede !important;
+}
+
+.dropdown-menu {
+  border-radius: 10px;
+}
+/* 🔽 Open dropdown on hover */
+.navbar .dropdown:hover .dropdown-menu {
+  display: block;
+  margin-top: 0;
+}
+/* 🎨 Dropdown menu design */
+.dropdown-menu {
+  background-color: #7f0000;   /* dark red */
+  border: none;
+  border-radius: 10px;
+  padding: 8px 0;
+}
+
+/* Dropdown items */
+.dropdown-menu .dropdown-item {
+  color: #ffffff;
+  padding: 10px 20px;
+  font-weight: 500;
+}
+
+/* Hover effect on items */
+.dropdown-menu .dropdown-item:hover {
+  background-color: #b71c1c;
+  color: #ffffff;
+}
+.dropdown-menu {
+  animation: fadeDown 0.25s ease-in-out;
+}
+
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* Buttons */
+.btn-red {
+  background-color: var(--blood-red);
+  color: white;
+}
+
+.btn-red:hover {
+  background-color: var(--dark-red);
+  color: white;
+}
+/* Feature Cards */
+.feature-card {
+  border: none;
+  border-radius: 15px;
+  background: linear-gradient(145deg, #ffffff, #f3f3f3);
+  box-shadow: 0 10px 25px rgba(183, 28, 28, 0.15);
+  transition: all 0.4s ease;
+  cursor: pointer;
+}
+
+.feature-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 18px 35px rgba(183, 28, 28, 0.35);
+  background: linear-gradient(145deg, #b71c1c, #8e0000);
+  color: white;
+}
+
+/* Icon Animation */
+.card-icon {
+  font-size: 48px;
+  margin-bottom: 15px;
+  transition: transform 0.4s ease;
+}
+
+.feature-card:hover .card-icon {
+  transform: scale(1.2) rotate(5deg);
+}
+
+/* Card Text */
+.feature-card h5 {
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.feature-card p {
+  font-size: 15px;
+  opacity: 0.9;
+}
+.chart-wrap {
+  position: relative;
+  height: 260px;   /* 👈 controls height */
+  width: 100%;
+}
+
+
+/* Footer */
+.site-footer {
+  margin-top: 60px;
+  background: linear-gradient(to right, #b71c1c, #7f0000);
+  color: white;
+  text-align: center;
+  padding: 18px;
+  font-size: 14px;
+}
+
+/* Card icons */
+.card-icon {
+  font-size: 40px;
+  color: var(--blood-red);
+}
+
+/* Footer */
+footer {
+  background-color: var(--blood-red);
+  color: white;
+  padding: 15px;
+  text-align: center;
+  margin-top: 40px;
+}
