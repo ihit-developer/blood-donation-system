@@ -18,16 +18,11 @@ app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-const session = require("express-session");
-
-app.use(
-  session({
-    secret: process.env.SESSION_SECRET,
-    resave: false,
-    saveUninitialized: false,
-  })
-);
-
+app.use(session({
+  secret: "bloodDonationSecret",
+  resave: false,
+  saveUninitialized: true
+}));
 
 app.use(express.static("public"));
 
