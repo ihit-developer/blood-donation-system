@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const session = require("express-session");
+const notificationRoutes = require("./routes/notificationRoutes");
 require("dotenv").config();
 
 
@@ -25,6 +26,7 @@ app.use(session({
 }));
 
 app.use(express.static("public"));
+app.use("/notifications", notificationRoutes);
 
 /* ================= DATABASE ================= */
 mongoose.connect(process.env.MONGO_URI)

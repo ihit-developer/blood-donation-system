@@ -1,6 +1,7 @@
 const express = require("express");
 const Donor = require("../models/Donor");
 const transporter = require("../utils/mailer"); // ✅ EMAIL CONFIG
+const Notification = require("../models/Notification");
 const router = express.Router();
 
 /* ================= CREATE (Register Donor) ================= */
@@ -77,6 +78,18 @@ router.post("/login", async (req, res) => {
 
   req.session.donor = donor._id;
   res.redirect("/donor-profile.html");
+});
+
+/* ================= CREATE NOTIFICATION (SECOND ADD ROUTE) ================= */
+router.post("/add", async (req, res) => {
+  const donor = await Donor.create(req.body);
+
+  // 🔔 CREATE NOTIFICATION FOR ADMIN
+  await Notification.create({
+    message: `🧑‍🦱 New donor registered: ${donor.name}`
+  });
+
+  res.redirect("/donor-login.html");
 });
 
 module.exports = router;

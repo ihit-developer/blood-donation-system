@@ -1,11 +1,17 @@
 const express = require("express");
 const router = express.Router();
 const Request = require("../models/Request");
+const Notification = require("../models/Notification");
 const transporter = require("../utils/mailer"); // 📧 EMAIL
 
-/* ================= CREATE – Submit Blood Request (PENDING EMAIL) ================= */
+/* ================= CREATE – Submit Blood Request (PENDING + NOTIFICATION) ================= */
 router.post("/add", async (req, res) => {
   const request = await Request.create(req.body);
+
+  // 🔔 ADMIN NOTIFICATION
+  await Notification.create({
+    message: `🚨 New blood request from ${request.patientName}`
+  });
 
   // 📧 EMAIL ON SUBMIT (PENDING)
   if (request.email) {

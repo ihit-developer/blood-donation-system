@@ -153,6 +153,50 @@ body {
   font-size: 40px;
   color: var(--blood-red);
 }
+/* 🔔 Notification Bell Hover */
+.notification-bell {
+  font-size: 20px;
+  transition: transform 0.3s ease;
+}
+
+.notification-bell:hover {
+  transform: rotate(-15deg) scale(1.1);
+}
+
+/* 🔴 Notification Badge Pulse */
+.notification-bell .badge {
+  font-size: 11px;
+  animation: pulse 1.0s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+
+@keyframes dropdownFade {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 🧾 Notification Items */
+.notification-item {
+  font-size: 14px;
+  border-bottom: 1px solid #f1f1f1;
+}
+
+.notification-item:last-child {
+  border-bottom: none;
+}
+
 
 /* Footer */
 footer {
