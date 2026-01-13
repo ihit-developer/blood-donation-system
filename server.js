@@ -1,10 +1,10 @@
-require("dotenv").config();
+
 const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const session = require("express-session");
-
+require("dotenv").config();
 
 
 const donorRoutes = require("./routes/donorRoutes");
